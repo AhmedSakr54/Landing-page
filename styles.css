@@ -2,6 +2,29 @@ body {
     margin: 0;
 }
 
+/* buttons styles */
+.btn {
+    padding: 14px 40px;
+    border: 2px solid #28abb9;
+    border-radius: 20px;
+    font-family: 'Krona One', sans-serif;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn:hover {
+    background-color: #1f1f1f;
+}
+.btn.login:hover {
+    color: #28abb9;
+}
+.btn.sign-up {
+    background-color: #252a34;
+    color: #28abb9;
+}
+.btn.sign-up:hover {
+    background-color: #1f1f1f;
+}
+
 /* Start header Section */
 #header {
     background-color: #252a34;
@@ -29,6 +52,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Krona One', sans-serif;
+    transition-duration: 0.3s;
 }
 
 .list-item a:hover {
@@ -42,6 +66,7 @@ body {
     height: 20rem;
     padding: 3%;
 }
+/* div for title and paragraph */
 .brief {
     margin: 0% 2% 0%;
     float: left;
@@ -59,6 +84,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin-right: 0;
 }
+
+/* this img is not a part of brief div */
 #introduction img {
     float: right;
 }
