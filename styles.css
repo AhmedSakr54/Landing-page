@@ -11,8 +11,16 @@ body {
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.btn:focus {
+    outline: none;
+}
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
 .btn:hover {
     background-color: #1f1f1f;
+    cursor: pointer;
 }
 .btn.login:hover {
     color: #28abb9;
