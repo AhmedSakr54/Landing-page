@@ -279,6 +279,11 @@ p {
         flex-wrap: wrap;
     }
 
+    .my-slide {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .brief {
         width: 100%;
     }
