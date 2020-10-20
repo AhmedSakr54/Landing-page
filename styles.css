@@ -30,16 +30,16 @@ p {
     cursor: pointer;
 }
 
-.btn.login:hover {
+.btn.light:hover {
     color: #28abb9;
 }
 
-.btn.sign-up {
+.btn.dark {
     background-color: #252a34;
     color: #28abb9;
 }
 
-.btn.sign-up:hover {
+.btn.dark:hover {
     background-color: #1f1f1f;
 }
 
@@ -264,7 +264,58 @@ p {
         opacity: 1
     }
 }
+/* End slideshow section */
 
+/* Start offerings section */
+#offerings {
+    background-color: #252a34;
+}
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(209, 199, 199, 0.2);
+    max-width: 300px;
+    text-align: center;
+    padding: 3%;
+    border-radius: 12px;
+    background-color: #eaeaea;
+}
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(119, 36, 36, 0.363);
+}
+.card h2 {
+    margin-top: 1%;
+}
+.card p {
+    margin-bottom: 2rem;
+}
+/* End offerings section */
+
+/* Start contacts section */
+#footer {
+    background-color: #eaeaea;
+}
+.contacts-list {
+    padding: 1.5% 3%;
+    text-align: center;
+}
+.social-links {
+    margin-top: 0;
+}
+.social-links a {
+    text-decoration: none;
+}
+.social-icon {
+    margin: auto 1.5%;
+    color: black;
+}
+.copyright-stamp {
+    margin-bottom: 0;
+}
 /* Screen width flexibility */
 @media only screen and (max-width: 850px) {
     #introduction {
@@ -297,5 +348,13 @@ p {
 
     .info {
         padding: 0 7%
+    }
+
+    .cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card {
+        margin: 2%;
     }
 }
