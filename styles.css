@@ -80,6 +80,7 @@ body {
 .brief {
     margin: 0% 2%;
     width: 50%;
+
 }
 .title {
     font-family: 'Ubuntu', sans-serif;
@@ -105,15 +106,52 @@ body {
 }
 /* End introduction section */
 
-@media only screen and (max-width: 675px) {
+
+
+/* Start features section */
+#features {
+    display: flex;
+    padding: 1%;
+    text-align: center;
+    background-color: #252a34;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.info {
+    padding: 1%;
+    color: #eaeaea;
+    font-family: 'Roboto', sans-serif;
+}
+.info p i {
+    margin: 2% 0 3%;
+    color:  #28abb9
+}
+.info p i:hover {
+    color: #eaeaea;
+}
+/* End features section */
+
+@media only screen and (max-width: 850px) {
     #introduction {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    #features {
         flex-wrap: wrap;
     }
     .brief {
+        /* text-align: center; */
         width: 100%;
+    }
+    .brief p {
         text-align: center;
     }
     .intro-img {
         margin-top: 3%;
+        padding: 0;
+    }
+    .info {
+        padding: 0 7%
     }
 }
