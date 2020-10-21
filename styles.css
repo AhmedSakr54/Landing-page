@@ -192,11 +192,12 @@ p {
     margin: auto;
     display: flex;
     align-items: center;
-    padding-top: 1%
+    padding-top: 1%;
 }
 
 .my-slide {
     display: none;
+    padding-right: 2%;
 }
 
 .prev,
@@ -214,7 +215,7 @@ p {
 
 .next {
     border-radius: 3px;
-    margin-left: 2%;
+    /* margin-left: 2%; */
 }
 
 /* On hover, add a black background color with a little bit see-through */
