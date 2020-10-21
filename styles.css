@@ -48,14 +48,39 @@ p {
     background-color: #252a34;
     position: sticky;
     top: 0;
+    z-index: 1;
 }
+
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: #252a34;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    background-color: #252a34;
+    display: block;
+    position: absolute;
+    max-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+.dropdown .dropbtn:active {
+    background-color: #28abb9;
+}
+
 
 .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-
 }
 
 .list-item {
@@ -186,6 +211,7 @@ p {
     border-radius: 3px;
     user-select: none;
 }
+
 .next {
     border-radius: 3px;
     margin-left: 2%;
@@ -210,10 +236,11 @@ p {
     text-align: center;
 }
 
-.show-slide {
+.show-item {
     display: flex;
 }
-.hide-slide {
+
+.hide-item {
     display: none;
 }
 
@@ -240,11 +267,13 @@ p {
     animation-name: fade;
     animation-duration: 1.5s;
 }
+
 .attributions {
     text-align: center;
 
 }
-.attributions a{
+
+.attributions a {
     text-decoration: none;
     color: #1f1f1f;
 }
@@ -268,12 +297,14 @@ p {
         opacity: 1
     }
 }
+
 /* End slideshow section */
 
 /* Start offerings section */
 #offerings {
     background-color: #252a34;
 }
+
 .cards-container {
     display: flex;
     justify-content: space-between;
@@ -288,38 +319,48 @@ p {
     border-radius: 12px;
     background-color: #eaeaea;
 }
+
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(119, 36, 36, 0.363);
 }
+
 .card h2 {
     margin-top: 1%;
 }
+
 .card p {
     margin-bottom: 2rem;
 }
+
 /* End offerings section */
 
 /* Start contacts section */
 #contacts {
     background-color: #eaeaea;
 }
+
 .contacts-list {
     padding: 1.5% 3%;
     text-align: center;
 }
+
 .social-links {
     margin-top: 0;
 }
+
 .social-links a {
     text-decoration: none;
 }
+
 .social-icon {
     margin: auto 1.5%;
     color: black;
 }
+
 .copyright-stamp {
     margin-bottom: 0;
 }
+
 /* Screen width flexibility */
 @media only screen and (max-width: 850px) {
     .add-wrap {

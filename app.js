@@ -1,12 +1,13 @@
-
 const addListenersToNavBarBtns = () => {
     const sections = document.getElementsByTagName("section");
     const navbarBtns = document.querySelectorAll(".list-item a");
     let k = 0;
-    for (let i = sections.length-1; i > 0; i--) {
+    for (let i = sections.length - 1; i > 0; i--) {
         const index = i;
         navbarBtns[k].addEventListener("click", () => {
-            sections[index].scrollIntoView({behavior: "smooth"});
+            sections[index].scrollIntoView({
+                behavior: "smooth"
+            });
         });
         k++;
     }
@@ -30,7 +31,7 @@ const showSlides = (n) => {
     // when true that means the next or prev buttons were pressed 
     // Then hide the previous slide
     if (prevSlideIndex > 0) {
-        slides[prevSlideIndex - 1].className = slides[prevSlideIndex - 1].className.replace("show-slide", "hide-slide");
+        slides[prevSlideIndex - 1].className = slides[prevSlideIndex - 1].className.replace("show-item", "hide-item");
         dots[prevSlideIndex - 1].className = dots[prevSlideIndex - 1].className.replace("active", "");
     }
     // when true that means its the end of the slides and we should reset to the first slide
@@ -41,7 +42,7 @@ const showSlides = (n) => {
         currentSlideIndex = slides.length;
 
     // show the expected slide to the client
-    slides[currentSlideIndex - 1].className = slides[currentSlideIndex - 1].className.replace("hide-slide", "show-slide");
+    slides[currentSlideIndex - 1].className = slides[currentSlideIndex - 1].className.replace("hide-item", "show-item");
     dots[currentSlideIndex - 1].classList.add("active");
     prevSlideIndex = currentSlideIndex;
 };
@@ -84,12 +85,52 @@ const addListenersToSlideShowBtns = () => {
  * show the first slide in the html and hide the rest
  */
 const showFirstSlideAndHideTheRest = () => {
-    slides[0].classList.add("show-slide");
+    slides[0].classList.add("show-item");
     for (let i = 1; i < slides.length; i++) {
-        slides[i].classList.add("hide-slide");
+        slides[i].classList.add("hide-item");
     }
 };
 
 showFirstSlideAndHideTheRest();
 addListenersToSlideShowBtns();
 showSlides(currentSlideIndex);
+
+
+
+const addDropDownOnMobileSize = () => {
+    let isWindowResized = false;
+    let numTimesDropBtnClicked = 0;
+    const dropBtn = document.querySelector(".dropbtn");
+    const navbar = document.querySelector(".navbar");
+    const navbarList = document.querySelector(".navbar ul");
+    
+    const addWindowResizingEvent = () => {
+        if (window.innerWidth <= 850) {
+            if (!isWindowResized) {
+                navbar.classList.add("dropdown");
+                navbarList.classList.add("hide-item");
+                navbarList.classList.add("dropdown-content");
+                dropBtn.className = dropBtn.className.replace("hide-item", "show-item");
+            }
+            isWindowResized = true;
+        } else {
+            navbar.classList.remove("dropdown");
+            navbarList.classList.remove("hide-item");
+            navbarList.classList.remove("dropdown-content");
+            dropBtn.className = dropBtn.className.replace("show-item", "hide-item");
+            isWindowResized = false;
+            numTimesDropBtnClicked = 0;
+        }
+    };
+    window.addEventListener("resize", addWindowResizingEvent);
+    dropBtn.addEventListener("click", () => {
+        if (numTimesDropBtnClicked % 2 === 0)
+        navbarList.classList.remove("hide-item");
+        else
+        navbarList.classList.add("hide-item");
+        numTimesDropBtnClicked++;
+    });
+    
+};
+
+addDropDownOnMobileSize();
