@@ -1,3 +1,20 @@
+
+const addListenersToNavBarBtns = () => {
+    const sections = document.getElementsByTagName("section");
+    const navbarBtns = document.querySelectorAll(".list-item a");
+    let k = 0;
+    for (let i = sections.length-1; i > 0; i--) {
+        const index = i;
+        navbarBtns[k].addEventListener("click", () => {
+            sections[index].scrollIntoView({behavior: "smooth"});
+        });
+        k++;
+    }
+};
+
+addListenersToNavBarBtns();
+
+// slideshow javascript
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const slides = document.querySelectorAll(".my-slide");
