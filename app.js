@@ -122,6 +122,7 @@ const addDropDownOnMobileSize = () => {
             numTimesDropBtnClicked = 0;
         }
     };
+    addWindowResizingEvent();
     window.addEventListener("resize", addWindowResizingEvent);
     dropBtn.addEventListener("click", () => {
         if (numTimesDropBtnClicked % 2 === 0)
